@@ -12,11 +12,11 @@
     <main>
         <div class="dati">
             <form action="">
-                <label for="nameCognome">Nome e Cognome</label>
-                <input type="text" placeholder="inserisci il tuo nome e cognome">
+                <label for="nome">Nome e Cognome</label>
+                <input id= "nomeCognome" type="text" placeholder="inserisci il tuo nome e cognome">
 
-                <label for="Km">Km da percorrere</label>
-                <input type="number" placeholder="inserisci un numero">
+                <label for="km">Km da percorrere</label>
+                <input  id= "km" type="number" placeholder="inserisci un numero">
 
                 <label for="eta">età</label>
                 <select  id ="eta">
@@ -24,11 +24,28 @@
                     <option value="minorenne">-18</option>
                     <option value="over60">+60</option>
                 </select>
-                <input type="submit" value="Genera">
-                <input type="submit" value="Annulla">
+                <input id= "btnGenera" type="submit" value="Genera">
+                <input id= "btnAnnulla" type="submit" value="Annulla">
             </form>
         </div>
-
+        <div class="biglietto">
+            <h2>Il tuo biglietto</h2>
+            <table>
+                <tr>
+                    <th>Nome Cognome Passeggero</th>
+                    <th>Offerta</th>
+                    <th>Carrozza</th>
+                    <th>COdice CP</th>
+                    <th>Costo biglietto</th>
+                </tr>
+                <tr>
+                    <td id="nomeCognome"></td>
+                    <td id="carrozza"></td>
+                    <td id="codiceCP"></td>
+                    <td id="costoBiglietto"></td>
+                </tr>
+            </table>
+        </div>
         
     </main>
 </body>
