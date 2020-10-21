@@ -26,18 +26,34 @@ bottoneGenera.addEventListener('click', function(){
     var prezzoBiglietto;
     var tipoOfferta = "Biglietto Standard";
     
-    if(etaPasseggero == minorenne){
+    if(etaPasseggero === "minorenne"){
         //sconto di 20%
         prezzoBiglietto = prezzoTotale - sconto20;
         tipoOfferta = "Sconto Minorenni";
-    }else if(etaPasseggero == over65){
+    }else if(etaPasseggero === "over65"){
         prezzoBiglietto = prezzoTotale - sconto40;
         tipoOfferta = "Sconto Over 65";
     }else{
-        prezzoBiglietto;
+        prezzoBiglietto = prezzoTotale;
     }
 
     //output decimali e valuta
     prezzoBiglietto = prezzoBiglietto.toFixed(2) + " euro";
+
+
+    //Genera Random posto Carrozza (da 1 a 9)
+    var numCarrozza = Math.floor(Math.random() * 10) + 1;
+
+    //genera Random numero (da 90 000 a 100 000 escluso)
+    var codiceCp = Math.floor(Math.random() * 100000 - 90000 ) + 90000;
+
+
+
+    //output stampa i valori ottenuti dal passeggero sulla tabella div "biglietto"
+    document.getElementById('nomeCognomeBiglietto').innerHTML = nomeCognomePasseggero;
+    document.getElementById('offerta-applicata').innerHTML = tipoOfferta;
+    document.getElementById('carrozza').innerHTML = numCarrozza;
+    document.getElementById('codiceCP').innerHTML = codiceCp;
+    document.getElementById('costoBiglietto').innerHTML = prezzoBiglietto;
 
 });
